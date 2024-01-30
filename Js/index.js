@@ -1,4 +1,5 @@
 const {MongoClient} = require('mongodb');
+const churchList = require('./churchList'); //Testing purposes
 
 (async () => {
     /**
@@ -13,6 +14,7 @@ const {MongoClient} = require('mongodb');
         // Connect to the MongoDB cluster
         await client.connect();
         console.log('🍃 Connected to DB.');
+        console.log(churchList);
   
     } catch (error) {
         console.log(`Error: ${error}`);
