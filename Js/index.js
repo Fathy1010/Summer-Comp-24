@@ -14,13 +14,14 @@ const churchModel = require('./churchModel');
         console.log('🍃 Connected to DB.');
         
         // Access the database
-        const database = client.db("Churches"); // Replace with your actual database name
+        const database = client.db("Churches");
 
         // Access the collection
         const collection = database.collection('Churches');
 
         // Query and log the result
-        const result = await collection.find().toArray();
+        var query = { name: "St George Coptic Orthodox Church" };
+        const result = await collection.find(query).toArray();
         console.log(result);
         
   
