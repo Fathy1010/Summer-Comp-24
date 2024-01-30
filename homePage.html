@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-grid">
+
+                <div class="mdl-layout-title" class="mdl-cell mdl-cell--4-col"><span>
+                        <p>
+                        <h2>Welcome</h2> <h5>Time: <span id="currentTime"></span></h5>
+                        </p>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <div class="mdl-layout__drawer">
+            <div class="mdl-grid">
+                <div class="mdl-layout-title" class="mdl-cell mdl-cell--1-col">
+                    <span class="mdl-layout-title"> Church Finder </span>
+                </div>
+            </div>
+            <nav class="mdl-navigation">
+                <div class="mdl-grid">
+                <div class="mdl-layout-title" class="mdl-cell mdl-cell--1-col">
+                    <img src="img/Diocese.png" width="60" height="60"><br>
+                </div>
+                </div>
+                
+                <a class="mdl-navigation__link" href="homePage.html" onclick="home()">Home</a>
+                <a class="mdl-navigation__link" href="bookingsPage.html" onclick="viewAllBookings()">Map</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button" onclick=makeBooking()>Book a trip</button>
+            </div>
+        </main>
+    </div>
+    <!-- <script src="js/shared.js"></script> -->
+    <script src="js/homePage.js"></script>
+    <script src="js/shared.js"></script>
+</body>
+
+</html>
