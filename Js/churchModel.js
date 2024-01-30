@@ -5,6 +5,9 @@ const churchSchema = new Schema({
     longitude: {type: Number, required: true,},
     latitude: {type: Number, required: true,},
     address: {type: String, required: true,},
+    phone: {type: String,},
+    url: {type: String,},
+    email: {type: String,},
   });
 
 module.exports = model('Church', churchSchema);

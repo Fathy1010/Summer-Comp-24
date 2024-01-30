@@ -19,7 +19,7 @@ const churchModel = require('./churchModel');
         // Access the collection
         const collection = database.collection('Churches');
 
-        // Query and log the result
+        // Query and log the result (Testing)
         var query = { name: "St George Coptic Orthodox Church" };
         const result = await collection.find(query).toArray();
         console.log(result);
