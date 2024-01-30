@@ -7,8 +7,8 @@ function updateDayTime() {
     let intervalHandle = setInterval(updateDayTime, 1000);
 }
 
-function moveToMap() {
-    window.location = "searchPage.html";
+function moveToHome() {
+    window.location = "homePage.html";
 }
 
 
