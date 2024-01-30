@@ -7,8 +7,8 @@ function updateDayTime() {
     let intervalHandle = setInterval(updateDayTime, 1000);
 }
 
-function makeBooking() {
-    window.location = "searchTypePage.html";
+function moveToMap() {
+    window.location = "searchPage.html";
 }
 
 
