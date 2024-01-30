@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Add an animated icon to the map</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+  <!-- Load the `mapbox-gl-geocoder` plugin. -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.2.0/mapbox-gl-directions.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.2.0/mapbox-gl-directions.css" type="text/css">
+
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    #fly {
+      display: block;
+      position: relative;
+      margin: 0px auto;
+      width: 50%;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      text-align: center;
+      color: #fff;
+      background: #ee8a65;
+    }
+    #gps {
+      display: block;
+      position: relative;
+      margin: 0px auto;
+      width: 50%;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      text-align: center;
+      color: #fff;
+      background: #ee8a65;
+    }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<button id="gps" onclick="getLocation()" >Use current location</button>
+<br>
+<button id="fly">Pan back</button>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZmF0aHktYSIsImEiOiJjbHJ6d3Q5dHcxa3dtMnFvNXQzaWt4Z3BrIn0.havexQQgUtpVfdiZYPaoKw';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    center: [0, 0],
+    zoom: 2,
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: 'mapbox://styles/mapbox/satellite-streets-v12'
+  });
+
+  const size = 200;
+
+  // This implements `StyleImageInterface`
+  // to draw a pulsing dot icon on the map.
+  const pulsingDot = {
+    width: size,
+    height: size,
+    data: new Uint8Array(size * size * 4),
+
+    // When the layer is added to the map,
+    // get the rendering context for the map canvas.
+    onAdd: function () {
+      const canvas = document.createElement('canvas');
+      canvas.width = this.width;
+      canvas.height = this.height;
+      this.context = canvas.getContext('2d');
+    },
+
+    // Call once before every frame where the icon will be used.
+    render: function () {
+      const duration = 1000;
+      const t = (performance.now() % duration) / duration;
+
+      const radius = (size / 4) * 0.3;
+      const outerRadius = (size / 4) * 0.7 * t + radius;
+      const context = this.context;
+
+      // Draw the outer circle.
+      context.clearRect(0, 0, this.width, this.height);
+      context.beginPath();
+      context.arc(
+              this.width / 4,
+              this.height / 4,
+              outerRadius,
+              0,
+              Math.PI * 2
+      );
+      context.fillStyle = `rgba(255, 200, 200, ${1 - t})`;
+      context.fill();
+
+      // Draw the inner circle.
+      context.beginPath();
+      context.arc(
+              this.width / 4,
+              this.height / 4,
+              radius,
+              0,
+              Math.PI * 2
+      );
+      context.fillStyle = 'rgba(255, 100, 100, 1)';
+      context.strokeStyle = 'white';
+      context.lineWidth = 2 + 4 * (1 - t);
+      context.fill();
+      context.stroke();
+
+      // Update this image's data with data from the canvas.
+      this.data = context.getImageData(
+              0,
+              0,
+              this.width,
+              this.height
+      ).data;
+
+      // Continuously repaint the map, resulting
+      // in the smooth animation of the dot.
+      map.triggerRepaint();
+
+      // Return `true` to let the map know that the image was updated.
+      return true;
+    }
+  };
+
+  function getLocation() {
+    let x = document.getElementById("place");
+    // if the browser allows gbs to be accesed
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  };
+  locationsGps=[]
+  function showPosition(position) {
+    let marker = new mapboxgl.Marker({color: "3370FF"});
+    let location = {
+      current: [position.coords.longitude, position.coords.latitude],
+      description: "Your Position",
+    };
+    map.panTo(location.current)
+    marker.setLngLat(location.current);
+    let popup = new mapboxgl.Popup({ offset: 45 });
+    popup.setText(location.description);
+    marker.setPopup(popup);
+    marker.addTo(map);
+    // Display the popup.
+    popup.addTo(map);
+    map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+    map.addSource('dot-point', {
+        'type': 'geojson',
+        'data': {
+          'type': 'FeatureCollection',
+          'features': [
+            {
+              'type': 'Feature',
+              'geometry': {
+                'type': 'Point',
+                'coordinates': location.current // icon position [lng, lat]
+              }
+            }
+          ]
+        }
+    });
+    map.addLayer({
+        'id': 'layer-with-pulsing-dot',
+        'type': 'symbol',
+        'source': 'dot-point',
+        'layout': {
+          'icon-image': 'pulsing-dot'
+        }
+      }).addTo(map);
+
+  };
+
+  function removeLayerWithId(idToRemove) {
+    let hasPoly = map.getLayer(idToRemove);
+    if (hasPoly !== undefined) {
+      map.removeLayer(idToRemove);
+      map.removeSource(idToRemove);
+    }
+  }
+
+  document.getElementById('fly').addEventListener('click', () => {
+  // Fly to a random location
+    map.flyTo({
+      center: [144.9341008, -37.8010007],
+      essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+      zoom: 10
+    });
+  });
+  map.addControl(
+          new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+          }),
+          'top-right'
+  );
+  map.addControl(new mapboxgl.NavigationControl());
+
+
+</script>
+</body>
+</html>

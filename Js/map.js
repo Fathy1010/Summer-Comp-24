@@ -3,7 +3,7 @@
 // provided as input by the user.
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiZmF0aHktYSIsImEiOiJja28yam5vbTkwdXQwMm90ZGxlaXJscDZtIn0._cjjO-OGPqW9nW3c8BOU8w";
+  "pk.eyJ1IjoiZmF0aHktYSIsImEiOiJjbHJ6d3Q5dHcxa3dtMnFvNXQzaWt4Z3BrIn0.havexQQgUtpVfdiZYPaoKw";
 let map = new mapboxgl.Map({
   container: "map",
   center: [144.9341008, -37.8010007], //starting position monash

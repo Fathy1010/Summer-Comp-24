@@ -8,8 +8,8 @@
             width: calc(65vh - 60px);
         }
     </style>
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -24,7 +24,7 @@
 
                 <div class="mdl-layout-title" class="mdl-cell mdl-cell--4-col"><span>
                         <p>
-                        <h4>search page</h4>
+                        <h4>All Churches</h4>
                         </p>
                     </span></div>
             </div>
@@ -33,55 +33,24 @@
         <div class="mdl-layout__drawer">
             <div class="mdl-grid">
                 <div class="mdl-layout-title" class="mdl-cell mdl-cell--1-col">
-                    <span class="mdl-layout-title">Pristine Cabs</span>
+                    <span class="mdl-layout-title">Church Finder</span>
                 </div>
             </div>
             <nav class="mdl-navigation">
                 <div class="mdl-grid">
                 <div class="mdl-layout-title" class="mdl-cell mdl-cell--1-col">
-                    <img src="img/Logo.png" width="50" height="50"><br>
+                    <img src="img/Diocese.png" width="60" height="60"><br>
                 </div>
                 </div>
                 
                 <a class="mdl-navigation__link" href="homePage.html" onclick="home()">Home</a>
-                <a class="mdl-navigation__link" href="bookingsPage.html" onclick="viewAllBookings()">View All Bookings</a>
+
             </nav>
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--4-col">
-                        <div class="mdl-grid">
-                            <div class="mdl-cell mdl-cell--12-col">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-no-placeholder">
-                                    <!-- need william/andrew to store the user name -->
-                                <input class="mdl-textfield__input" type="text" id="nameOfUser">
-                                <label class="mdl-textfield__label" for="nameOfUser">Name of User</label>
-                                <span id="fullName_msg" class="mdl-textfield__error"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mdl-grid">
-                            <div class="mdl-cell mdl-cell--12-col">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
-                                <!-- need william/andrew to access the Date the user inputs-->
-                                <input class="mdl-textfield__input" type="date" id="dateInputOfBooking">
-                                  <label class="mdl-textfield__label" for="dateInputOfBooking">Date</label>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="mdl-grid">
-                            <div class="mdl-cell mdl-cell--12-col">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
-                                <!-- need william/andrew to access the time the user inputs-->
-                                <input class="mdl-textfield__input" type="time" id="timeInputOfBooking">
-                                  <label class="mdl-textfield__label" for="timeInputOfBooking">Time</label>
-                              </div>
-                            </div>
-                        </div>
-
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
                                 <h4><b>Pick Up Address:</b></h4>
@@ -131,9 +100,9 @@
 
 </body>
 
-<script src="js/shared.js"></script>
-<script src="js/map.js"></script>
-<script src="js/geocode(opencage).js"></script>
-<script src="js/searchPage.js"></script>
+<script src="Js/shared.js"></script>
+<script src="Js/map.js"></script>
+<script src="Js/geocode(opencage).js"></script>
+<script src="Js/searchPage.js"></script>
 
 </html>
