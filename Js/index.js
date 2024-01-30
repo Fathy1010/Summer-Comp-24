@@ -29,3 +29,21 @@ const churchModel = require('./churchModel');
         console.log(`Error: ${error}`);
     }
 })();
+
+
+
+// let bookingNameRef = document.getElementById("bookingName");
+// let dateRef = document.getElementById("date");
+// let timeRef = document.getElementById("time");
+// let startLocationRef = document.getElementById("startLocation");
+// let destinationRef = document.getElementById("destination");
+// let distanceRef = document.getElementById("distance");
+// let vehicleTypeRef = document.getElementById("vehicleType");
+// let costRef = document.getElementById("cost");
+//
+// function displayDetailedBookingData() {
+//     let retrievedData = JSON.parse(localStorage.getItem("bookingStorage"))
+//     let newBooking = new Booking();
+//     newBooking.fromData(retrievedData);
+//     bookingNameRef.innerText = newBooking.fullName;
+//     dateRef.innerText = newBooking.bookingDate;
