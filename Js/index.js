@@ -1,10 +1,11 @@
+require('dotenv').config();
 const {MongoClient} = require('mongodb');
 const mongoose = require('mongoose');
 const churchList = require('./churchList'); //Testing purposes
 const churchModel = require('./churchModel');
 
 (async () => {
-    const uri = "mongodb+srv://churchFinder:rBVasUDo9cTsnZni@cluster0.szgbxv7.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = process.env.MONGODB_URI;
 
     const client = new MongoClient(uri);
 
@@ -23,6 +24,11 @@ const churchModel = require('./churchModel');
         var query = { name: "St George Coptic Orthodox Church" };
         const result = await collection.find(query).toArray();
         console.log(result);
+
+        // Log specific object (Testing)
+        result.forEach(db => {
+            console.log("Name: ", db.name);
+          })
         
   
     } catch (error) {

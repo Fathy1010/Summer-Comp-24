@@ -71,7 +71,7 @@
 <body>
   <div class="container">
     <header class="header">
-      <h1>Matching Colors Example</h1>
+      <h1></h1>
     </header>
     <main class="main-content">
       <section class="description">
@@ -85,4 +85,45 @@
     </main>
   </div>
 </body>
+<script>
+    require('dotenv').config();
+    const {MongoClient} = require('mongodb');
+
+    (async () => {
+    const uri = process.env.MONGODB_URI;
+
+    const client = new MongoClient(uri);
+
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+        console.log('🍃 Connected to DB.');
+        
+        // Access the database
+        const database = client.db("Churches");
+
+        // Access the collection
+        const collection = database.collection('Churches');
+
+        // Query and log the result
+        var query = { name: "St George Coptic Orthodox Church" };
+        const result = await collection.find(query).toArray();
+        console.log(result);
+
+        result.forEach(db => {
+          console.log("Name: ", db.name);
+          nameOfChurch=db.name;
+          let nameOfChurch 
+        })
+
+        
+  
+    } catch (error) {
+        console.log(`Error: ${error}`);
+    }
+})();
+
+
+
+</script>
 </html>
