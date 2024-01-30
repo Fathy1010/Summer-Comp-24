@@ -66,12 +66,13 @@
       margin-bottom: 1rem;
     }
   </style>
-  <title>Matching Colors Example</title>
+  <div id="nameOfChurch"></div>
+  <title>nameOfChurch</title>
 </head>
 <body>
   <div class="container">
     <header class="header">
-      <h1></h1>
+      <h1 id="nameOfChurch"></h1>
     </header>
     <main class="main-content">
       <section class="description">
@@ -110,14 +111,22 @@
         const result = await collection.find(query).toArray();
         console.log(result);
 
-        result.forEach(db => {
-          console.log("Name: ", db.name);
-          nameOfChurch=db.name;
-          let nameOfChurch 
-        })
+      // Assuming 'result' is an array of objects
+      result.forEach(db => {
+      console.log("Name: ", db.name);
+        // Get the element with id "nameOfChurch"
+        let nameOfChurch = document.getElementById("nameOfChurch");
 
-        
-  
+        // Create a new paragraph element
+        var paragraph = document.createElement("p");
+
+        // Set the text content of the paragraph to the church name
+        paragraph.textContent = db.name;
+
+        // Append the paragraph to the "nameOfChurch" element
+        nameOfChurch.appendChild(paragraph);
+      });
+
     } catch (error) {
         console.log(`Error: ${error}`);
     }
