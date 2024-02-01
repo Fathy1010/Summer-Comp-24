@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a2ecfaf3c8.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -66,54 +68,45 @@
       margin-bottom: 1rem;
     }
   </style>
-  <div id="nameOfChurch"></div>
-  <title>nameOfChurch</title>
 </head>
+
 <body>
   <div class="container">
     <header class="header">
-      <h1 id="nameOfChurch"></h1>
+      <h1 id="nameOfChurch"> <i class="fa-sharp fa-solid fa-church"></i> St George Coptic Orthodox Church Melbourne</h1>
     </header>
     <main class="main-content">
       <section class="description">
-        <h2>Description</h2>
-        <p>This is an example of a web page with matching colors for all elements, including a title, description, and a box on the right-hand side with more information.</p>
-        <br>
-        <img src="Stgeorge.png" width="950" height="680">
+        <h2>Timetable:</h2>
+        <p></p><br>
+        <img src="img/StgeorgeTT.png" width="950" height="680">
       </section>
       <aside class="additional-info">
-        <h3>Additional Information</h3>
-        <p>More information goes here...</p>
+        <h3>St.George Information</h3>
+
+        <h4><i class="fa-solid fa-location-dot"></i> Address:</h4>
+        <p> 77-79 Henry Street,<br> St Albans, Victoria 3021</p>
+        <p><i class="fa-solid fa-phone"></i> Ph 9364 5022</p>
+        <p><i class="fa-solid fa-globe"></i> Web:<a href="https://www.stgeorgecopts.org.au">www.stgeorgecopts.org.au</a>
+        </p>
+        <p>
+          <a href="https://www.facebook.com/stgeorgecoptic/" target="_blank" rel="noopener"><i
+              class="fa-brands fa-facebook"></i></a>
+          &nbsp;&nbsp;&nbsp;
+          <a href="https://www.instagram.com/saintgeorgeyouth/" target="_blank" rel="noopener"><i
+              class="fa-brands fa-instagram"></i></a>
+        </p>
+        <h3>Priests:</h3>
+        <p> Names and pictures of priests if avaliable </p>
       </aside>
     </main>
   </div>
+
+
+
+  </script>
+
 </body>
-<script>
-        // Access the database
-        const database = client.db("Churches");
+<script src="Js/shared.js"></script>
 
-        // Access the collection
-        const collection = database.collection('Churches');
-
-        // Query and log the result
-        var query = { name: "St George Coptic Orthodox Church" };
-        const result = await collection.find(query).toArray();
-        console.log(result);
-
-        // Assuming 'result' is an array of objects
-        result.forEach(db => {
-        console.log("Name: ", db.name);
-        // Get the element with id "nameOfChurch"
-        let nameOfChurch = document.getElementById("nameOfChurch");
-
-        // Create a new paragraph element
-        var paragraph = document.createElement("p");
-
-        // Set the text content of the paragraph to the church name
-        paragraph.textContent = db.name;
-
-        // Append the paragraph to the "nameOfChurch" element
-        nameOfChurch.appendChild(paragraph);
-        });
-</script>
 </html>
