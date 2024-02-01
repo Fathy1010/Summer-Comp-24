@@ -32,34 +32,37 @@
       width: 100%;
     }
 
-    #fly {
-      display: block;
-      position: relative;
-      margin: 0px auto;
-      width: 50%;
-      height: 40px;
-      padding: 10px;
+    #place {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 50px; /* Adjust the width as needed */
+      height: 50px;
       border: none;
-      border-radius: 3px;
-      font-size: 12px;
-      text-align: center;
-      color: #fff;
-      background: #ee8a65;
+      border-radius: 50%;
+      background: #2281e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
 
-    #place {
-      display: block;
-      position: relative;
-      margin: 0px auto;
-      width: 50%;
-      height: 40px;
-      padding: 10px;
+    #place img {
+      width: 80%; /* Adjust the size of the icon */
+      height: auto;
+    }
+
+    #fly {
+      position: absolute;
+      bottom: 75px; /* Adjust the distance from the bottom */
+      right: 20px;
+      width: 50px; /* Adjust the width as needed */
+      height: 50px;
       border: none;
       border-radius: 3px;
       font-size: 12px;
       text-align: center;
-      color: #fff;
-      background: #ee8a65;
+      background: #2281e8;
     }
 
     body {
@@ -73,52 +76,23 @@
       top: 20px;
       left: 20px;
       z-index: 1000;
-      background-color: white;
-      padding: 10px;
+      background-color: #2281e8;
+      padding: 5px;
       border-radius: 5px;
     }
   </style>
 </head>
 
-
 <body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-grid">
-        <div class="mdl-layout-title" class="mdl-cell mdl-cell--4-col">
-          <span>
-            <p>
-            <h2>Welcome</h2>
-            </p>
-          </span>
-        </div>
-      </div>
-    </header>
-
-    <div class="mdl-layout__drawer">
-      <div class="mdl-grid">
-        <div class="mdl-layout-title" class="mdl-cell mdl-cell--1-col">
-          <span class="mdl-layout-title"> Church Finder </span>
-        </div>
-      </div>
-      <nav class="mdl-navigation">
-        <div class="mdl-grid">
-          <div class="mdl-layout-title" class="mdl-cell mdl-cell--1-col">
-            <img src="img/Diocese.png" width="60" height="60"><br>
-          </div>
-        </div>
-
-        <a class="mdl-navigation__link" href="homePage.html" onclick="home()">Home</a>
-        <a class="mdl-navigation__link" href="bookingsPage.html" onclick="viewAllBookings()">Map</a>
-      </nav>
-    </div>
-
     <div id="map"></div>
-    <button id="place" onclick="getLocation()">Use current location</button>
-    <br>
-    <button id="fly">Pan back</button>
-    <button id="overlay" href="homePage.html" type="button" onclick="moveToHome()"> Back </button>
 
+    <button id="place" onclick="getLocation()">
+      <img src="img/GPS-PhotoRoom.png" width="20" height="20">
+    </button>
+
+    <button id="fly"> <img src="img/Diocese-PhotoRoom.png" width="35" height="35"></button>
+
+    <button id="overlay" href="homePage.html" type="button" onclick="moveToHome()"> Back </button>
 
     <script>
       mapboxgl.accessToken = 'pk.eyJ1IjoiZmF0aHktYSIsImEiOiJjbHJ6d3Q5dHcxa3dtMnFvNXQzaWt4Z3BrIn0.havexQQgUtpVfdiZYPaoKw';
@@ -131,7 +105,6 @@
       });
 
       const size = 200;
-
       // This implements `StyleImageInterface`
       // to draw a pulsing dot icon on the map.
       const pulsingDot = {
@@ -277,7 +250,6 @@
         'top-right'
       );
       map.addControl(new mapboxgl.NavigationControl());
-
 
     </script>
     <script src="Js/homePage.js"></script>
