@@ -7,7 +7,6 @@ const churchSchema = new Schema({
     address: {type: String, required: true,},
     phone: {type: String,},
     url: {type: String,},
-    email: {type: String,},
   });
 
 module.exports = model('Church', churchSchema);
