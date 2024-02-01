@@ -89,19 +89,6 @@
   </div>
 </body>
 <script>
-    require('dotenv').config();
-    const {MongoClient} = require('mongodb');
-
-    (async () => {
-    const uri = process.env.MONGODB_URI;
-
-    const client = new MongoClient(uri);
-
-    try {
-        // Connect to the MongoDB cluster
-        await client.connect();
-        console.log('🍃 Connected to DB.');
-        
         // Access the database
         const database = client.db("Churches");
 
@@ -113,9 +100,9 @@
         const result = await collection.find(query).toArray();
         console.log(result);
 
-      // Assuming 'result' is an array of objects
-      result.forEach(db => {
-      console.log("Name: ", db.name);
+        // Assuming 'result' is an array of objects
+        result.forEach(db => {
+        console.log("Name: ", db.name);
         // Get the element with id "nameOfChurch"
         let nameOfChurch = document.getElementById("nameOfChurch");
 
@@ -127,14 +114,6 @@
 
         // Append the paragraph to the "nameOfChurch" element
         nameOfChurch.appendChild(paragraph);
-      });
-
-    } catch (error) {
-        console.log(`Error: ${error}`);
-    }
-})();
-
-
-
+        });
 </script>
 </html>
