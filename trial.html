@@ -242,7 +242,7 @@
       map.panTo(location.current);
 
     };
-
+    // if needed to remove layers
     function removeLayerWithId(idToRemove) {
       let hasPoly = map.getLayer(idToRemove);
       if (hasPoly !== undefined) {
@@ -250,22 +250,222 @@
         map.removeSource(idToRemove);
       }
     }
-
+  // button to get the pan to the coptic diocese of melb
     document.getElementById('fly').addEventListener('click', () => {
       // Fly to a random location
       map.flyTo({
-        center: [144.9341008, -37.8010007],
+        center: [144.9441008, -37.8010007],
         essential: true, // this animation is considered essential with respect to prefers-reduced-motion
         zoom: 10
       });
     });
+    // the directional nav system w satellite feedback
     map.addControl(
       new MapboxDirections({
         accessToken: mapboxgl.accessToken
       }),
       'top-right'
     );
+    // adding the zoon in and out functionality
     map.addControl(new mapboxgl.NavigationControl());
+
+
+
+    // these are for the icons and marks to be placed on the map
+    const geojson = {
+      'type': 'FeatureCollection',
+      'features': [
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St.George',
+            'iconSize': [60, 60]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.79872,-37.73440]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St.Mary',
+            'iconSize': [55, 55]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.92728,-37.79408]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St.Mark',
+            'iconSize': [55, 55]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.988420, -37.749540]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Verena & St Bishoy',
+            'iconSize': [50, 50]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.960810, -37.810710]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St John & St Verena',
+            'iconSize': [50, 50]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [145.011580, -37.852690]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Macarius',
+            'iconSize': [60, 60]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [145.133239, -37.633899]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Athanasius',
+            'iconSize': [65, 60]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [145.197356, -37.796850]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'Archangel Michael & St Anthony',
+            'iconSize': [66, 60]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [145.090532, -37.896638]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Bishoy and St Shenouda',
+            'iconSize': [50, 50]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [145.094765, -37.775792]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Mina and St Marina',
+            'iconSize': [40, 40]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [145.285377,-38.004752]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Anthony Monastry',
+            'iconSize': [40, 40]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.792127, -36.927455]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'Archangel Michael Monastry',
+            'iconSize': [40, 40]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.558842, -37.322941]
+          }
+        }
+      ]
+    };
+
+    // Add markers to the map.
+    for (const marker of geojson.features) {
+// Create a DOM element for each marker.
+      const el = document.createElement('div');
+      const width = marker.properties.iconSize[0];
+      const height = marker.properties.iconSize[1];
+      el.className = 'marker';
+      if(marker.properties.message=='St.George') {
+        el.style.backgroundImage = `url(https://i0.wp.com/stgeorgecopts.org.au/wp-content/uploads/2018/11/logo.png?fit=101%2C100&ssl=1/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St.Mary') {
+        el.style.backgroundImage = `url(https://images.squarespace-cdn.com/content/v1/5e7153f21603ee1f241f93de/1586580457079-K85WFDV3DO3LN8F5D094/St+Mary+Logo+v2+white+background+and+border.png?format=1500w/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St.Mark') {
+        el.style.backgroundImage = `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEHPK77gIlz8M6KAqPH-sAmCDgxL6AlJyh3w&usqp=CAU/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St Verena & St Bishoy') {
+        el.style.backgroundImage = `url(https://i.imgur.com/DImum81.png/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St John & St Verena') {
+        el.style.backgroundImage = `url(https://i.imgur.com/71nx4ik.png/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St Macarius') {
+        el.style.backgroundImage = `url(https://i.imgur.com/CgpH7nL.jpeg/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St Athanasius') {
+        el.style.backgroundImage = `url(https://images.squarespace-cdn.com/content/v1/60acee37929085620645fe23/7eec048f-307d-4d1d-aa38-89f944a5992e/IMG_0351.PNG?format=1500w/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='Archangel Michael & St Anthony') {
+        el.style.backgroundImage = `url(https://i.imgur.com/4cqbRQQ.png/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St Bishoy and St Shenouda') {
+        el.style.backgroundImage = `url(https://i.imgur.com/SIeyMyp.jpeg/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St Mina and St Marina') {
+        el.style.backgroundImage = `url(https://i.imgur.com/bJGUjMs.jpeg/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='St Anthony Monastry') {
+        el.style.backgroundImage = `url(https://i.imgur.com/VZqap6K.jpeg/g/${width}/${height}/)`;
+      }
+      if(marker.properties.message=='Archangel Michael Monastry') {
+        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+      }
+      el.style.width = `${width}px`;
+      el.style.height = `${height}px`;
+      el.style.backgroundSize = '100%';
+
+      el.addEventListener('click', () => {
+        window.alert(marker.properties.message);
+      });
+
+// Add markers to the map.
+      new mapboxgl.Marker(el)
+              .setLngLat(marker.geometry.coordinates)
+              .addTo(map);
+    }
 
   </script>
   <script src="Js/homePage.js"></script>
