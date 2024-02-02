@@ -11,7 +11,11 @@ const churchList = [
     ['St Mina and St Marina Coptic Orthodox Church', '-38.004752', '145.285377', "41-59 Saffron Dr, Hallam VIC 3805", '(03) 9796 5257', 'http://www.hallamcopts.org.au'],
     ['St Anthony Coptic Orthodox Monastery', '-36.927455', '144.792127', "Redburns Ln, Heathcote VIC 3523", '(03) 5433 3026', 'https://www.hisvine.com/church/55/St-Anthony-Monastery'],
     ['Archangel Michael Coptic Orthodox Nunnery', '-37.322941', '144.558842', "Campaspe House, 29 Goldies Ln, Woodend VIC 3442", '(03) 5417 6353', 'https://www.hisvine.com/church/121/Archangel-Michael-Monastery'],
-    
+    ['St Paul Coptic Orthodox Church', '-36.745560', '144.280940', "Bayne St & Smith St, North Bendigo VIC 3550", '0403 336 725', 'https://www.bendigocopticchurch.org.au'],
+    ['St Philopateer Coptic Orthodox Church', '-37.689370', '144.583980', "2B Barries Rd, Melton VIC 3337", '0402 026 799', 'https://www.acnc.gov.au/charity/charities/d4bb51ba-3aaf-e811-a963-000d3ad244fd/profile'],
+    ['St Karas & St Severus Coptic Orthodox Church', '-38.076680', '145.482270', "47 James St, Pakenham, Victoria 3810", 'NA', 'melbcopts.org.au'],
+    ['St Moses Coptic Orthodox Church', '-38.151530', '144.354730', "18 Little Myers St, Geelong VIC 3220", '5221 4000', 'https://www.stmosescopts.org'],
+    ['St Pope Kyrillos VI Coptic Orthodox Church', '-37.366950', '144.523860', "Campaspe House Hotel, 29 Goldies Lane, Woodend, VIC 3442", 'NA', 'http://www.melbcopts.org.au/'],
   ];
   
   module.exports = churchList;
