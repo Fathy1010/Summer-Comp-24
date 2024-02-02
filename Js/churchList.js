@@ -10,7 +10,7 @@ const churchList = [
     ['St Bishoy and St Shenouda Coptic Orthodox Church', '-37.775792', '145.094765', "1-9 Prospect Rd, Bulleen VIC 3105", '1800 595 366', 'https://www.hisvine.com/church/27/St-Bishoy-St-Shenouda-Church'],
     ['St Mina and St Marina Coptic Orthodox Church', '-38.004752', '145.285377', "41-59 Saffron Dr, Hallam VIC 3805", '(03) 9796 5257', 'http://www.hallamcopts.org.au'],
     ['St Anthony Coptic Orthodox Monastery', '-36.927455', '144.792127', "Redburns Ln, Heathcote VIC 3523", '(03) 5433 3026', 'https://www.hisvine.com/church/55/St-Anthony-Monastery'],
-    ['Archangel Michael Coptic Orthodox Monastery', '-37.322941', '144.558842', "Campaspe House, 29 Goldies Ln, Woodend VIC 3442", '(03) 5417 6353', 'https://www.hisvine.com/church/121/Archangel-Michael-Monastery'],
+    ['Archangel Michael Coptic Orthodox Nunnery', '-37.322941', '144.558842', "Campaspe House, 29 Goldies Ln, Woodend VIC 3442", '(03) 5417 6353', 'https://www.hisvine.com/church/121/Archangel-Michael-Monastery'],
     
   ];
   
