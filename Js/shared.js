@@ -34,38 +34,6 @@ class Travel {
 
 }
 
-class BookingBook {
-    constructor() {
-        this._ongoingBookings = [];
-        this._scheduledBookings = [];
-        this._completedBookings = [];
-    }
-
-    //Accessors
-    get ongoingBookings() {
-        return this._ongoingBookings;
-    }
-
-    get scheduledBookings() {
-        return this.scheduledBookings;
-    }
-
-    get completedBookings() {
-        return this.completedBookings;
-    }
-
-    addBooking(Booking) {
-        if (Booking.isCompleted == false) {
-            this._ongoingBookings.push(Booking);
-            if (Booking.isScheduled == true) {
-                this._scheduledBookings.push(Booking);
-            }
-        }
-        else {
-            this._completedBookings.push(Booking);
-        }
-    }
-}
 
 // Functions = Local storage
 function localStorageCheck(key) {
