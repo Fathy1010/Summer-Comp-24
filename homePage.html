@@ -66,7 +66,7 @@
             <div class="mdl-grid">
                 <div class="mdl-layout-title" class="mdl-cell mdl-cell--4-col"><span>
                         <p>
-                        <h2>Church Finder</h2>
+                        <h2>Coptic Atlas</h2>
                         </p>
                     </span>
                 </div>
@@ -76,7 +76,7 @@
         <div class="mdl-layout__drawer">
             <div class="mdl-grid">
                 <div class="mdl-layout-title" class="mdl-cell mdl-cell--1-col">
-                    <span class="mdl-layout-title">Church Finder </span>
+                    <span class="mdl-layout-title">Coptic Atlas </span>
                 </div>
             </div>
             <nav class="mdl-navigation">
@@ -108,11 +108,11 @@
 
                     <div class="card-number left-card-number">
                         <!-- Card 6 -->
-                        <div class="card" onclick="redirectToPage('./docs/Video.mov')">
+                        <div class="card" onclick="openPdfInNewTab('https://youtu.be/DqrayueJsCE')">
                             <div class="content">
                                 <!-- Your card content goes here -->
-                                <h6><i class="fa-solid fa-video"></i> Movie</h6>
-                                <p> CLick To Download The Video</p>
+                                <h6><i class="fa-brands fa-youtube"></i> Personal Well-Being</h6>
+                                <p> <a onclick="redirectToPage('./docs/Video.mov')" ><i class="fa-solid fa-download"></i>  Click To Download The Video</a></p>
                             </div>
                         </div>
                     </div>
@@ -120,11 +120,11 @@
                     <!-- Card 5 -->
                     <div class="card-number right-card-number">
                         <!-- Card 5 -->
-                        <div class="card" onclick="redirectToPage('page5.html')">
+                        <div class="card" onclick="openPdfInNewTab('./docs/The Journey of Joy w.o notes.pdf')">
                             <div class="content">
                                 <!-- Your card content goes here -->
-                                <h6>Card 5</h6>
-                                <p>This is the content of Card 5.</p>
+                                <h6><i class="fa-solid fa-images"></i> The Journey of Joy</h6>
+                                <p><a onclick="openPdfInNewTab('./docs/The Journey of Joy with notes.pdf')" ><i class="fa-solid fa-person-chalkboard"></i>  Click Here for Speaker Notes </a></p>
                             </div>
                         </div>
                     </div>
@@ -133,21 +133,52 @@
                     <div class="card" onclick="redirectToPage('trial.html')">
                         <div class="content">
                             <!-- Your card content goes here -->
-                            <h6><i class="fa-solid fa-map-location-dot"></i> Church Finder</h6>
+                            <h6><i class="fa-solid fa-map-location-dot"></i>  Church Finder</h6>
                             <p>This is a map of the church's.</p>
                         </div>
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="card" onclick="openPdfInNewTab('./docs/Mixing%20Faith%20and%20Works.pdf')">
+                    <div class="card" onclick="openPdfInNewTab('./docs/Necklace.pdf')">
                         <div class="content">
                             <!-- Your card content goes here -->
-                            <h6>Card 3</h6>
-                            <p>This is the content of Card 3.</p>
+                            <h6><i class="fa-solid fa-book"></i>  <B>Necklace Activity</B></h6>
+                            <p>This is an interactive piece of writing</p>
                         </div>
                     </div>
 
                 </div>
+                <br> <br><br><br><br><br>
+                <footer class="mdl-mini-footer">
+                    <div class="mdl-mini-footer__left-section">
+                        <div class="mdl-logo">Coptic Atlas</div>
+                        <ul class="mdl-mini-footer__link-list">
+                            <li><a href="help.html">Contact us</a></li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li><a>Product Of St George Coptic Church</a></li>
+                        </ul>
+                    </div>
+                </footer>
 
                 <script>
                     function redirectToPage(page) {
