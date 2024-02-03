@@ -70,29 +70,37 @@
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
+
+    #overlay-home {
+      position: absolute;
+      top: 5px;
+      left: 1500px;
+      z-index: 1000;
+      background-color: #2281e8;
+      padding: 7px;
+      border-radius: 8px;
+    }
+
+    #overlay-map {
+      position: absolute;
+      top: 5px;
+      left: 1610px;
+      z-index: 1000;
+      background-color: #2281e8;
+      padding: 7px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 
 <body>
-  <div class="mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header mdl-layout__header--scroll">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title"></span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation -->
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="homePage.html" onclick="home()"><i
-              class="fa-solid fa-house-chimney"></i> Home</a>
-          <a class="mdl-navigation__link" href="trial.html"><i class="fa-solid fa-map-location-dot"></i> Church
-            Finder</a>
-        </nav>
-      </div>
-    </header>
-  </div>
+
 
   <div class="container">
+    <button id="overlay-home" onclick="redirectToPage('homePage.html')"><i class="fa-solid fa-house-chimney"></i>
+      Home</a></button>
+    <button id="overlay-map" onclick="redirectToPage('trial.html')"><i class="fa-solid fa-map-location-dot"></i>
+      Map</a></button>
     <br><br>
     <header class="header">
       <h1 id="nameOfChurch"> <i class="fa-sharp fa-solid fa-church"></i> St George Coptic Orthodox Church Melbourne</h1>
@@ -130,6 +138,14 @@
   </script>
 
 </body>
+
+<script>
+  function redirectToPage(page) {
+    window.location.href = page;
+  }
+</script>
+<!-- <script src="js/shared.js"></script> -->
+<script src="Js/homePage.js"></script>
 <script src="Js/shared.js"></script>
 
 </html>
