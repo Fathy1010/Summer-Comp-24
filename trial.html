@@ -416,7 +416,7 @@
           },
           'geometry': {
             'type': 'Point',
-            'coordinates': [144.280940, -36.745560]
+            'coordinates': [144.28144,-36.74552]
           }
         }
         ,
@@ -424,7 +424,7 @@
           'type': 'Feature',
           'properties': {
             'message': 'St Philopateer',
-            'iconSize': [40, 40]
+            'iconSize': [50, 50]
           },
           'geometry': {
             'type': 'Point',
@@ -642,8 +642,8 @@
           }
         });
       }
-      if (marker.properties.message == ' St Paul') {
-        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+      if (marker.properties.message == 'St Paul') {
+        el.style.backgroundImage = `url(https://i.imgur.com/OzF77Xv.png/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
           // Ask for confirmation
@@ -657,7 +657,7 @@
         });
       }
       if (marker.properties.message == 'St Philopateer') {
-        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+        el.style.backgroundImage = `url(https://i.imgur.com/Kb7mKcw.png/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
           // Ask for confirmation
@@ -671,7 +671,7 @@
         });
       }
       if (marker.properties.message == 'St Karas & St Severus') {
-        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+        el.style.backgroundImage = `url(https://i.imgur.com/PiEQWZm.jpeg/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
           // Ask for confirmation
@@ -685,7 +685,7 @@
         });
       }
       if (marker.properties.message == 'St Moses') {
-        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+        el.style.backgroundImage = `url(https://i.imgur.com/PQkJpGo.png/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
           // Ask for confirmation
@@ -698,20 +698,7 @@
           }
         });
       }
-      if (marker.properties.message == 'St Pope Kyrillos VI') {
-        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
-        // Add a click event listener to the marker element
-        el.addEventListener('click', function () {
-          // Ask for confirmation
-          const userConfirmation = confirm(`Would you like to go to a new page related to ${marker.properties.message}?`);
 
-          // If user confirms, redirect to a new page
-          if (userConfirmation) {
-            // Replace 'your_new_page_url' with the actual URL you want to redirect to
-            window.location.href = '.html';
-          }
-        });
-      }
 
       el.style.width = `${width}px`;
       el.style.height = `${height}px`;
