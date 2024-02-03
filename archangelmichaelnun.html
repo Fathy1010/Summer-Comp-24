@@ -71,7 +71,7 @@
       margin-bottom: 1rem;
     }
     #overlay-home{
-      position: absolute;
+      position: fixed;
       top: 5px;
       left: 1535px;
       z-index: 1000;
@@ -80,13 +80,47 @@
       border-radius: 15px;
     }
     #overlay-map{
-      position: absolute;
+      position: fixed;
       top: 5px;
       left: 1635px;
       z-index: 1000;
       background-color: #1f85ff;
       padding: 8px;
       border-radius: 15px;
+    }
+    .additional-info .people-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .additional-info .people-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .additional-info .people-list img {
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .additional-info .people-list .person-info {
+      flex: 1;
+    }
+
+    .additional-info .people-list h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .additional-info .people-list p {
+      margin: 0;
+      color: #666;
+    }
+
+    a {
+      color: black; /* Set the color to black or your desired color */
     }
   </style>
 </head>
@@ -108,9 +142,9 @@
         <img src="img/ArchangelmichaelNunTT.png" width="950" height="700">
       </section>
       <aside class="additional-info">
-        <h3>Archangel Michael Nunnery Information</h3>
+        <h4>Archangel Michael Nunnery Information</h4>
 
-        <h4><i class="fa-solid fa-location-dot"></i> Address:</h4>
+        <h3><i class="fa-solid fa-location-dot"></i> Address:</h3>
         <p> Campaspe House, 29 Goldies Ln,<br> Woodend VIC 3442</p>
         <p><i class="fa-solid fa-phone"></i> Ph 5417 6353</p>
         <p><i class="fa-solid fa-globe"></i> Web:<a href="https://www.hisvine.com/church/121/Archangel-Michael-Monastery">
@@ -123,8 +157,26 @@
           <a href="https://www.instagram.com/archangelmichaelmonastery/" target="_blank" rel="noopener"><i
               class="fa-brands fa-instagram"></i></a>
         </p>
-        <h3>Priests:</h3>
-        <p> Names and pictures of priests if avaliable </p>
+        <h3><i class="fa-solid fa-cross"></i>&nbsp;Nuns:</h3>
+        <!-- List of People with Pictures -->
+        <ul class="people-list">
+          <li>
+            <img src="img/Fathers/archangelmichaelnun/antonia-profile-495x600.jpg" alt="Person 1" width="80" height="80">
+            <div class="person-info">
+              <h4>Nun Antonia St Demiana </h4>
+              <p><i class="fa-solid fa-phone"></i> &nbsp;04xx xxx xxx</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/Fathers" alt="Nun Mikaela Archangel Michael" width="80" height="80">
+            <div class="person-info">
+              <h4>Nun Mikaela Archangel Michael </h4>
+              <p><i class="fa-solid fa-phone"></i> &nbsp;04xx xxx xxx</p>
+            </div>
+          </li>
+
+          <!-- Add more people as needed -->
+        </ul>
       </aside>
     </main>
   </div>
