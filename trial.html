@@ -87,14 +87,14 @@
       padding: 5px;
       border-radius: 5px;
     }
-    .marker {
-       display: block;
-       border: none;
-       border-radius: 50%;
-       cursor: pointer;
-       padding: 0;
-     }
 
+    .marker {
+      display: block;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 0;
+    }
   </style>
 </head>
 
@@ -250,7 +250,7 @@
         map.removeSource(idToRemove);
       }
     }
-  // button to get the pan to the coptic diocese of melb
+    // button to get the pan to the coptic diocese of melb
     document.getElementById('fly').addEventListener('click', () => {
       // Fly to a random location
       map.flyTo({
@@ -283,7 +283,7 @@
           },
           'geometry': {
             'type': 'Point',
-            'coordinates': [144.79872,-37.73440]
+            'coordinates': [144.79872, -37.73440]
           }
         },
         {
@@ -294,7 +294,7 @@
           },
           'geometry': {
             'type': 'Point',
-            'coordinates': [144.92728,-37.79408]
+            'coordinates': [144.92728, -37.79408]
           }
         },
         {
@@ -382,7 +382,7 @@
           },
           'geometry': {
             'type': 'Point',
-            'coordinates': [145.285377,-38.004752]
+            'coordinates': [145.285377, -38.004752]
           }
         },
         {
@@ -407,17 +407,74 @@
             'coordinates': [144.558842, -37.322941]
           }
         }
+        ,
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Paul',
+            'iconSize': [40, 40]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.280940, -36.745560]
+          }
+        }
+        ,
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Philopateer',
+            'iconSize': [40, 40]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.583980, -37.689370]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Karas & St Severus',
+            'iconSize': [40, 40]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [145.482270, -38.076680]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Moses',
+            'iconSize': [40, 40]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.354730, -38.151530]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'message': 'St Pope Kyrillos VI',
+            'iconSize': [40, 40]
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.523860, -37.366950]
+          }
+        }
       ]
     };
 
     // Add markers to the map.
     for (const marker of geojson.features) {
-// Create a DOM element for each marker.
+      // Create a DOM element for each marker.
       const el = document.createElement('div');
       const width = marker.properties.iconSize[0];
       const height = marker.properties.iconSize[1];
       el.className = 'marker';
-      if(marker.properties.message=='St.George') {
+      if (marker.properties.message == 'St.George') {
         el.style.backgroundImage = `url(https://i0.wp.com/stgeorgecopts.org.au/wp-content/uploads/2018/11/logo.png?fit=101%2C100&ssl=1/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -431,7 +488,7 @@
           }
         });
       }
-      if(marker.properties.message=='St.Mary') {
+      if (marker.properties.message == 'St.Mary') {
         el.style.backgroundImage = `url(https://images.squarespace-cdn.com/content/v1/5e7153f21603ee1f241f93de/1586580457079-K85WFDV3DO3LN8F5D094/St+Mary+Logo+v2+white+background+and+border.png?format=1500w/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -445,7 +502,7 @@
           }
         });
       }
-      if(marker.properties.message=='St.Mark') {
+      if (marker.properties.message == 'St.Mark') {
         el.style.backgroundImage = `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEHPK77gIlz8M6KAqPH-sAmCDgxL6AlJyh3w&usqp=CAU/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -459,7 +516,7 @@
           }
         });
       }
-      if(marker.properties.message=='St Verena & St Bishoy') {
+      if (marker.properties.message == 'St Verena & St Bishoy') {
         el.style.backgroundImage = `url(https://i.imgur.com/DImum81.png/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -473,7 +530,7 @@
           }
         });
       }
-      if(marker.properties.message=='St John & St Verena') {
+      if (marker.properties.message == 'St John & St Verena') {
         el.style.backgroundImage = `url(https://i.imgur.com/71nx4ik.png/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -487,7 +544,7 @@
           }
         });
       }
-      if(marker.properties.message=='St Macarius') {
+      if (marker.properties.message == 'St Macarius') {
         el.style.backgroundImage = `url(https://i.imgur.com/CgpH7nL.jpeg/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -501,7 +558,7 @@
           }
         });
       }
-      if(marker.properties.message=='St Athanasius') {
+      if (marker.properties.message == 'St Athanasius') {
         el.style.backgroundImage = `url(https://images.squarespace-cdn.com/content/v1/60acee37929085620645fe23/7eec048f-307d-4d1d-aa38-89f944a5992e/IMG_0351.PNG?format=1500w/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -515,7 +572,7 @@
           }
         });
       }
-      if(marker.properties.message=='Archangel Michael & St Anthony') {
+      if (marker.properties.message == 'Archangel Michael & St Anthony') {
         el.style.backgroundImage = `url(https://i.imgur.com/4cqbRQQ.png/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -529,7 +586,7 @@
           }
         });
       }
-      if(marker.properties.message=='St Bishoy and St Shenouda') {
+      if (marker.properties.message == 'St Bishoy and St Shenouda') {
         el.style.backgroundImage = `url(https://i.imgur.com/SIeyMyp.jpeg/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -543,7 +600,7 @@
           }
         });
       }
-      if(marker.properties.message=='St Mina and St Marina') {
+      if (marker.properties.message == 'St Mina and St Marina') {
         el.style.backgroundImage = `url(https://i.imgur.com/bJGUjMs.jpeg/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -557,7 +614,7 @@
           }
         });
       }
-      if(marker.properties.message=='St Anthony Monastry') {
+      if (marker.properties.message == 'St Anthony Monastry') {
         el.style.backgroundImage = `url(https://i.imgur.com/VZqap6K.jpeg/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -571,7 +628,7 @@
           }
         });
       }
-      if(marker.properties.message=='Archangel Michael Monastry') {
+      if (marker.properties.message == 'Archangel Michael Monastry') {
         el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
         // Add a click event listener to the marker element
         el.addEventListener('click', function () {
@@ -585,14 +642,85 @@
           }
         });
       }
+      if (marker.properties.message == ' St Paul') {
+        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+        // Add a click event listener to the marker element
+        el.addEventListener('click', function () {
+          // Ask for confirmation
+          const userConfirmation = confirm(`Would you like to go to a new page related to ${marker.properties.message}?`);
+
+          // If user confirms, redirect to a new page
+          if (userConfirmation) {
+            // Replace 'your_new_page_url' with the actual URL you want to redirect to
+            window.location.href = '.html';
+          }
+        });
+      }
+      if (marker.properties.message == 'St Philopateer') {
+        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+        // Add a click event listener to the marker element
+        el.addEventListener('click', function () {
+          // Ask for confirmation
+          const userConfirmation = confirm(`Would you like to go to a new page related to ${marker.properties.message}?`);
+
+          // If user confirms, redirect to a new page
+          if (userConfirmation) {
+            // Replace 'your_new_page_url' with the actual URL you want to redirect to
+            window.location.href = '.html';
+          }
+        });
+      }
+      if (marker.properties.message == 'St Karas & St Severus') {
+        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+        // Add a click event listener to the marker element
+        el.addEventListener('click', function () {
+          // Ask for confirmation
+          const userConfirmation = confirm(`Would you like to go to a new page related to ${marker.properties.message}?`);
+
+          // If user confirms, redirect to a new page
+          if (userConfirmation) {
+            // Replace 'your_new_page_url' with the actual URL you want to redirect to
+            window.location.href = '.html';
+          }
+        });
+      }
+      if (marker.properties.message == 'St Moses') {
+        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+        // Add a click event listener to the marker element
+        el.addEventListener('click', function () {
+          // Ask for confirmation
+          const userConfirmation = confirm(`Would you like to go to a new page related to ${marker.properties.message}?`);
+
+          // If user confirms, redirect to a new page
+          if (userConfirmation) {
+            // Replace 'your_new_page_url' with the actual URL you want to redirect to
+            window.location.href = '.html';
+          }
+        });
+      }
+      if (marker.properties.message == 'St Pope Kyrillos VI') {
+        el.style.backgroundImage = `url(https://i.imgur.com/FcAIzj9.jpeg/g/${width}/${height}/)`;
+        // Add a click event listener to the marker element
+        el.addEventListener('click', function () {
+          // Ask for confirmation
+          const userConfirmation = confirm(`Would you like to go to a new page related to ${marker.properties.message}?`);
+
+          // If user confirms, redirect to a new page
+          if (userConfirmation) {
+            // Replace 'your_new_page_url' with the actual URL you want to redirect to
+            window.location.href = '.html';
+          }
+        });
+      }
+
       el.style.width = `${width}px`;
       el.style.height = `${height}px`;
       el.style.backgroundSize = '100%';
 
-// Add markers to the map.
+      // Add markers to the map.
       new mapboxgl.Marker(el)
-              .setLngLat(marker.geometry.coordinates)
-              .addTo(map);
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
     }
 
   </script>
