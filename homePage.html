@@ -49,11 +49,13 @@
         }
 
         .left-card-number {
-            left: -190px;
+            left: 479px;
+            top: 401px;
         }
 
         .right-card-number {
-            right: -190px;
+            right: 479px;
+            top: 401px;
         }
     </style>
 </head>
@@ -96,37 +98,39 @@
                 <br><br><br><br><br><br><br>
                 <div class="card-container">
                     <!-- Card 1 -->
-                    <div class="card" onclick="redirectToPage('page1.html')">
+                    <div class="card" onclick="openPdfInNewTab('./docs/Mixing%20Faith%20and%20Works.pdf')">
                         <div class="content">
                             <!-- Your card content goes here -->
-                            <h6>Mixing Faith and Works</h6>
-                            <p><a href= "Summer-Comp-24/docs/Mixing Faith and Works.pdf"></a></p>
+                            <h6><i class="fa-solid fa-file-pdf"></i> Mixing Faith and Works</h6>
+                            <p>Open PDF in New Tab</a></p>
+                        </div>
+                    </div>
+
+                    <div class="card-number left-card-number">
+                        <!-- Card 6 -->
+                        <div class="card" onclick="redirectToPage('./docs/Video.mov')">
+                            <div class="content">
+                                <!-- Your card content goes here -->
+                                <h6><i class="fa-solid fa-video"></i> Movie</h6>
+                                <p> CLick To Download The Video</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="card-number right-card-number">
+                        <!-- Card 5 -->
+                        <div class="card" onclick="redirectToPage('page5.html')">
+                            <div class="content">
+                                <!-- Your card content goes here -->
+                                <h6>Card 5</h6>
+                                <p>This is the content of Card 5.</p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 2 -->
                     <div class="card" onclick="redirectToPage('trial.html')">
-                        <div class="card-number left-card-number">
-                            <!-- Card 6 -->
-                            <div class="card" onclick="redirectToPage('page6.html')">
-                                <div class="content">
-                                    <!-- Your card content goes here -->
-                                    <h6>Card 6</h6>
-                                    <p>This is the content of Card 6.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-number right-card-number">
-                            <!-- Card 5 -->
-                            <div class="card" onclick="redirectToPage('page5.html')">
-                                <div class="content">
-                                    <!-- Your card content goes here -->
-                                    <h6>Card 5</h6>
-                                    <p>This is the content of Card 5.</p>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="content">
                             <!-- Your card content goes here -->
                             <h6><i class="fa-solid fa-map-location-dot"></i> Church Finder</h6>
@@ -143,12 +147,14 @@
                         </div>
                     </div>
 
-
                 </div>
 
                 <script>
                     function redirectToPage(page) {
                         window.location.href = page;
+                    }
+                    function openPdfInNewTab(pdfPath) {
+                        window.open(pdfPath, '_blank');
                     }
                 </script>
                 <!-- <script src="js/shared.js"></script> -->
