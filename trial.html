@@ -262,7 +262,8 @@
     // the directional nav system w satellite feedback
     map.addControl(
       new MapboxDirections({
-        accessToken: mapboxgl.accessToken
+        accessToken: mapboxgl.accessToken,
+        unit: 'metric' // Set unit to kilometers
       }),
       'top-right'
     );
