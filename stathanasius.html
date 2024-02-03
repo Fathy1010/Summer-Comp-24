@@ -71,7 +71,7 @@
       margin-bottom: 1rem;
     }
     #overlay-home{
-      position: absolute;
+      position: fixed;
       top: 5px;
       left: 1535px;
       z-index: 1000;
@@ -80,13 +80,46 @@
       border-radius: 15px;
     }
     #overlay-map{
-      position: absolute;
+      position: fixed;
       top: 5px;
       left: 1635px;
       z-index: 1000;
       background-color: #1f85ff;
       padding: 8px;
       border-radius: 15px;
+    }
+    a {
+      color: black; /* Set the color to black or your desired color */
+    }
+    .additional-info .people-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .additional-info .people-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .additional-info .people-list img {
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .additional-info .people-list .person-info {
+      flex: 1;
+    }
+
+    .additional-info .people-list h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .additional-info .people-list p {
+      margin: 0;
+      color: #666;
     }
   </style>
 </head>
@@ -105,27 +138,51 @@
     <main class="main-content">
       <section class="description">
         <h2>Timetable:</h2>
-        <p></p><br>
-        <img src="img/StathanasiusTT.png" width="950" height="550">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/StathanasiusTT.png" width="950" height="650">
       </section>
       <aside class="additional-info">
-        <h3>St. Athanasius Information</h3>
+        <h4>St. Athanasius Information</h4>
 
-        <h4><i class="fa-solid fa-location-dot"></i> Address:</h4>
+        <h3><i class="fa-solid fa-location-dot"></i> Address:</h3>
         <p> 100 Park Rd,<br> Donvale VIC 3111</p>
         <p><i class="fa-solid fa-phone"></i> Ph 8872 8400 </p>
         <p><i class="fa-solid fa-globe"></i> Web:<a href="https://www.stathanasius.org.au">
           https://www.stathanasius.org.au</a>
         </p>
         <p>
-          <a href="https://www.facebook.com/stathanasiusmelbourne/" target="_blank" rel="noopener"><i
+          <h2> <a href="https://www.facebook.com/stathanasiusmelbourne/" target="_blank" rel="noopener"><i
               class="fa-brands fa-facebook"></i></a>
           &nbsp;&nbsp;&nbsp;
           <a href="https://www.instagram.com/sactheology/" target="_blank" rel="noopener"><i
-              class="fa-brands fa-instagram"></i></a>
+              class="fa-brands fa-instagram"></i></a></h2>
         </p>
-        <h3>Priests:</h3>
-        <p> Names and pictures of priests if avaliable </p>
+        <h3> <i class="fa-solid fa-cross"></i>  Priests:</h3>
+        <!-- List of People with Pictures -->
+        <ul class="people-list">
+          <li>
+            <img src="img/Fathers/stathanasius/Fr Antonious Guirguis.png" alt="Person 1" width="80" height="80">
+            <div class="person-info">
+              <h4>Fr Antonious Guirguis</h4>
+              <p><i class="fa-solid fa-phone"></i> &nbsp;(03) 8872 8480</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/Fathers/stathanasius/Fr Tadawos Abdelmalak.png" alt="Person 2" width="80" height="80">
+            <div class="person-info">
+              <h4>Fr Tadawos Abdelmalak</h4>
+              <p><i class="fa-solid fa-phone"></i> &nbsp;(03) 8872 8480</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/Fathers/stathanasius/Fr Gregorios Awad.png" alt="Person 2" width="80" height="80">
+            <div class="person-info">
+              <h4>Fr Gregorios Awad</h4>
+              <p><i class="fa-solid fa-phone"></i> &nbsp;(03) 8872 8480</p>
+            </div>
+          </li>
+          <!-- Add more people as needed -->
+        </ul>
       </aside>
     </main>
   </div>
