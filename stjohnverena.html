@@ -71,7 +71,7 @@
       margin-bottom: 1rem;
     }
     #overlay-home{
-      position: absolute;
+      position: fixed;
       top: 5px;
       left: 1535px;
       z-index: 1000;
@@ -80,7 +80,7 @@
       border-radius: 15px;
     }
     #overlay-map{
-      position: absolute;
+      position: fixed;
       top: 5px;
       left: 1635px;
       z-index: 1000;
@@ -90,6 +90,36 @@
     }
     a {
       color: black; /* Set the color to black or your desired color */
+    }
+    .additional-info .people-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .additional-info .people-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .additional-info .people-list img {
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .additional-info .people-list .person-info {
+      flex: 1;
+    }
+
+    .additional-info .people-list h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .additional-info .people-list p {
+      margin: 0;
+      color: #666;
     }
   </style>
 </head>
@@ -108,27 +138,52 @@
     <main class="main-content">
       <section class="description">
         <h2>Timetable:</h2>
-        <p></p><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <img src="img/StjohnverenaTT.png" width="900" height="700">
       </section>
       <aside class="additional-info">
-        <h3>St.John & St.Verena Information</h3>
+        <h4>St.John & St.Verena Information</h4>
 
-        <h4><i class="fa-solid fa-location-dot"></i> Address:</h4>
+        <h3><i class="fa-solid fa-location-dot"></i> Address:</h3>
         <p> 583 Orrong Rd,<br> Armadale VIC 3143</p>
         <p><i class="fa-solid fa-phone"></i> Ph 0414 650 060</p>
         <p><i class="fa-solid fa-globe"></i> Web:<a href="https://stverenaschurch.org/index.html">
           https://stverenaschurch.org/index.html</a>
         </p>
-        <p>
+        <p> <h2>
           <a href="https://m.facebook.com/stjohnandstverena" target="_blank" rel="noopener"><i
               class="fa-brands fa-facebook"></i></a>
           &nbsp;&nbsp;&nbsp;
           <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i
-              class="fa-brands fa-instagram"></i></a>
+              class="fa-brands fa-instagram"></i></a> </h2>
         </p>
-        <h3>Priests:</h3>
-        <p> Names and pictures of priests if avaliable </p>
+        <h3> <i class="fa-solid fa-cross"></i>  Priests:</h3>
+        <!-- List of People with Pictures -->
+        <ul class="people-list">
+          <li>
+            <img src="img/Fathers/stjohnstverena/Fr Mark Atalla.jpg" alt="Person 1" width="80" height="80">
+            <div class="person-info">
+              <h4>Fr Mark Atalla</h4>
+              <p><i class="fa-solid fa-phone"></i> &nbsp;0414650060</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/Fathers/StBishoyStShenouda/Fr Shenouda Boutros.jpg" alt="Person 2" width="80" height="80">
+            <div class="person-info">
+              <h4>Fr Shenouda Boutros</h4>
+              <p><i class="fa-solid fa-phone"></i> &nbsp;0401559580</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/Fathers/StBishoyStShenouda/Fr" alt="   Fr Salib Farouk" width="80" height="80">
+            <div class="person-info">
+              <h4>Fr Salib Farouk</h4>
+              <p><i class="fa-solid fa-phone"></i> &nbsp;04xxxxxxxx</p>
+            </div>
+          </li>
+          <!-- Add more people as needed -->
+        </ul>
       </aside>
     </main>
   </div>
